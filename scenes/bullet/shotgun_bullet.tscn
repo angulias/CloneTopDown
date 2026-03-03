@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://deqhr2ecpr3wl"]
+
+[ext_resource type="PackedScene" uid="uid://60p6m0sf4sgj" path="res://scenes/bullet/single_bullet.tscn" id="1_ok4ht"]
+[ext_resource type="Texture2D" uid="uid://b6irhpunowl8a" path="res://assets/Sprites/Extras/bullet.png" id="2_u2ovo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2y8uk"]
+radius = 529.343
+
+[node name="ShotgunBullet" unique_id=363081958 instance=ExtResource("1_ok4ht")]
+
+[node name="Area2D2" type="Area2D" parent="." index="1" unique_id=816826616]
+position = Vector2(0, 120)
+scale = Vector2(0.07, 0.07)
+collision_layer = 0
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2" index="0" unique_id=9499178]
+texture = ExtResource("2_u2ovo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="1" unique_id=1997057870]
+shape = SubResource("CircleShape2D_2y8uk")
+
+[node name="Area2D3" type="Area2D" parent="." index="2" unique_id=1350368718]
+position = Vector2(0, -120)
+scale = Vector2(0.07, 0.07)
+collision_layer = 0
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D3" index="0" unique_id=1900136041]
+texture = ExtResource("2_u2ovo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" index="1" unique_id=1784834051]
+shape = SubResource("CircleShape2D_2y8uk")
+
+[node name="Sprite2D" parent="." index="3" unique_id=1363542654]
+position = Vector2(0, 243)
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]

@@ -10,6 +10,6 @@ weapon_sprite = ExtResource("2_7tnj7")
 weapon_color = Color(0, 0.69803923, 0.6627451, 1)
 damage = 0.5
 delay_btw_shots = 0.3
-shot_position = Vector2(685, 65)
+shot_position = Vector2(215.19995, -51.999992)
 bullet_scene = ExtResource("1_5sb2r")
 metadata/_custom_type_script = "uid://1arg8y5kkdmx"

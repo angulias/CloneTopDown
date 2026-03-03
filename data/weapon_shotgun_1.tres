@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://xbvbvhto85ax"]
 
+[ext_resource type="PackedScene" uid="uid://deqhr2ecpr3wl" path="res://scenes/bullet/shotgun_bullet.tscn" id="1_dxrq7"]
 [ext_resource type="Script" uid="uid://1arg8y5kkdmx" path="res://data/weapon_data.gd" id="1_ofwu0"]
 [ext_resource type="Texture2D" uid="uid://kgtvsn78ykg8" path="res://assets/Sprites/Weapons/weapon_3_shotgun.png" id="2_hkxm0"]
 
@@ -10,5 +11,6 @@ weapon_color = Color(0.58431375, 0.50980395, 1, 1)
 buy_price = 25
 damage = 1.5
 delay_btw_shots = 0.4
-shot_position = Vector2(865, 75)
+shot_position = Vector2(368, -60.79999)
+bullet_scene = ExtResource("1_dxrq7")
 metadata/_custom_type_script = "uid://1arg8y5kkdmx"

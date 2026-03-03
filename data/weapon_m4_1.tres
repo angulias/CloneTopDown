@@ -11,6 +11,6 @@ weapon_color = Color(1, 1, 1, 1)
 buy_price = 25
 damage = 1.2
 delay_btw_shots = 0.2
-shot_position = Vector2(700, 20)
+shot_position = Vector2(233.6, -15.999996)
 bullet_scene = ExtResource("1_8hn2s")
 metadata/_custom_type_script = "uid://1arg8y5kkdmx"

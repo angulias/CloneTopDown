@@ -144,6 +144,7 @@ height = 536.0
 scale = Vector2(0.25, 0.25)
 collision_mask = 6
 script = ExtResource("1_uniwh")
+move_speed = null
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1624771196]
 modulate = Color(1, 1, 1, 0.3137255)
@@ -171,5 +172,7 @@ position = Vector2(416, 0)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("30_iqsei")
 
-[node name="FirePos" type="Marker2D" parent="Weapon" unique_id=1548070491]
-position = Vector2(685, -65)
+[node name="FirePos" type="Marker2D" parent="Weapon/WeaponSprite" unique_id=1548070491]
+unique_name_in_owner = true
+position = Vector2(215.19995, -51.999992)
+scale = Vector2(0.79999995, 0.79999995)
