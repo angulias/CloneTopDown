@@ -6,12 +6,15 @@ class_name Player
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var can_move := true
+var mouse_position: Vector2
 
 func _process(delta: float) -> void:
 	if not can_move:
 		return
 	
+	get_mouse_position()
 	update_animations()
+	update_player_rotation()
 
 func _physics_process(delta: float) -> void:
 	if not can_move:
@@ -22,6 +25,15 @@ func _physics_process(delta: float) -> void:
 	velocity = movement
 	move_and_slide()
 	
+
+func get_mouse_position() -> void:
+	mouse_position = get_global_mouse_position()
+
+func update_player_rotation() -> void:
+	if mouse_position.x > global_position.x:
+		anim_sprite.flip_h = false
+	else:
+		anim_sprite.flip_h = true
 
 func update_animations() -> void:
 	if velocity.length() > 0:
