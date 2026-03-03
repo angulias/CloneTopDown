@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bcvenaoggvsup"]
+
+[ext_resource type="Texture2D" uid="uid://ttwsgmsodoav" path="res://assets/Sprites/Dead anim/death_0.png" id="1_hrpt5"]
+[ext_resource type="Texture2D" uid="uid://dd0aq5umrxj22" path="res://assets/Sprites/Dead anim/death_1.png" id="2_tkr8g"]
+[ext_resource type="Texture2D" uid="uid://bugmww0gwh2js" path="res://assets/Sprites/Dead anim/death_2.png" id="3_qvuen"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qrbi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hrpt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tkr8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qvuen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qvuen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tkr8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hrpt5")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 20.0
+}]
+
+[node name="ExplosionAnim" type="AnimatedSprite2D" unique_id=1027465356]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_1qrbi")
+animation = &"idle"
+autoplay = "idle"
+frame = 5
+frame_progress = 1.0

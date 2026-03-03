@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://ep4mxvuwipt2" path="res://data/weapon_m4_2.tres" id="10_otnwt"]
 [ext_resource type="Resource" uid="uid://xbvbvhto85ax" path="res://data/weapon_shotgun_1.tres" id="11_3xj4h"]
 [ext_resource type="Resource" uid="uid://dwwm5jtuqmnev" path="res://data/weapon_shotgun_2.tres" id="12_5v6r0"]
+[ext_resource type="PackedScene" uid="uid://82drakcbsd3p" path="res://scenes/extra/rock.tscn" id="12_vaxfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kelw5"]
 size = Vector2(6144, 40)
@@ -36,6 +37,7 @@ limit_right = 3072
 limit_bottom = 3072
 
 [node name="Crosshair" type="Sprite2D" parent="." unique_id=1114838093]
+z_index = 1
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("3_0sr1o")
 
@@ -44,6 +46,7 @@ texture = ExtResource("3_0sr1o")
 [node name="StaticBody2D" type="StaticBody2D" parent="Colliders" unique_id=1291011192]
 position = Vector2(0, 3090)
 collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D" unique_id=520688116]
 shape = SubResource("RectangleShape2D_kelw5")
@@ -51,6 +54,7 @@ shape = SubResource("RectangleShape2D_kelw5")
 [node name="StaticBody2D2" type="StaticBody2D" parent="Colliders" unique_id=1963590278]
 position = Vector2(0, -3090)
 collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D2" unique_id=468460903]
 shape = SubResource("RectangleShape2D_kelw5")
@@ -59,6 +63,7 @@ shape = SubResource("RectangleShape2D_kelw5")
 position = Vector2(-3090, 0)
 rotation = 1.5707964
 collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D3" unique_id=990348750]
 shape = SubResource("RectangleShape2D_kelw5")
@@ -67,14 +72,10 @@ shape = SubResource("RectangleShape2D_kelw5")
 position = Vector2(3091, 0)
 rotation = 1.5707964
 collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D4" unique_id=66112320]
 shape = SubResource("RectangleShape2D_kelw5")
-
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=893989289]
-stream = ExtResource("5_lfrn8")
-autoplay = true
-bus = &"Music"
 
 [node name="Weapons" type="Node2D" parent="." unique_id=211694050]
 position = Vector2(-747, 0)
@@ -101,3 +102,43 @@ weapon_data = ExtResource("11_3xj4h")
 [node name="WeaponPickup6" parent="Weapons" unique_id=1509955878 instance=ExtResource("6_5i0tg")]
 position = Vector2(1500, 0)
 weapon_data = ExtResource("12_5v6r0")
+
+[node name="Rocks" type="Node2D" parent="." unique_id=572982625]
+
+[node name="Rock" parent="Rocks" unique_id=1820411241 instance=ExtResource("12_vaxfo")]
+position = Vector2(1215, 135)
+
+[node name="Rock2" parent="Rocks" unique_id=2080374341 instance=ExtResource("12_vaxfo")]
+position = Vector2(248, -452)
+
+[node name="Rock3" parent="Rocks" unique_id=1140412868 instance=ExtResource("12_vaxfo")]
+position = Vector2(-1014, -512)
+
+[node name="Rock4" parent="Rocks" unique_id=2136846777 instance=ExtResource("12_vaxfo")]
+position = Vector2(-1130, 477)
+
+[node name="Rock5" parent="Rocks" unique_id=993475178 instance=ExtResource("12_vaxfo")]
+position = Vector2(-2026, -2084)
+
+[node name="Rock6" parent="Rocks" unique_id=2117777014 instance=ExtResource("12_vaxfo")]
+position = Vector2(1008, -2380)
+
+[node name="Rock7" parent="Rocks" unique_id=1487956354 instance=ExtResource("12_vaxfo")]
+position = Vector2(1855, -1454)
+
+[node name="Rock8" parent="Rocks" unique_id=1757991167 instance=ExtResource("12_vaxfo")]
+position = Vector2(2328, 1058)
+
+[node name="Rock9" parent="Rocks" unique_id=1983754627 instance=ExtResource("12_vaxfo")]
+position = Vector2(1057, 2151)
+
+[node name="Rock10" parent="Rocks" unique_id=96660140 instance=ExtResource("12_vaxfo")]
+position = Vector2(-883, 2171)
+
+[node name="Rock11" parent="Rocks" unique_id=659385177 instance=ExtResource("12_vaxfo")]
+position = Vector2(-2085, 1679)
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=893989289]
+stream = ExtResource("5_lfrn8")
+autoplay = true
+bus = &"Music"
