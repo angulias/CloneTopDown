@@ -10,4 +10,5 @@ weapon_color = Color(0.58431375, 0.50980395, 1, 1)
 buy_price = 25
 damage = 1.5
 delay_btw_shots = 0.4
+shot_position = Vector2(865, 75)
 metadata/_custom_type_script = "uid://1arg8y5kkdmx"

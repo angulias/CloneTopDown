@@ -6,4 +6,5 @@ class_name WeaponData
 @export var buy_price: int
 @export var damage: float
 @export var delay_btw_shots: float
+@export var shot_position: Vector2
 @export var bullet_scene: PackedScene

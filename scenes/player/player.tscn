@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://dl6wf3lilmpds" path="res://assets/Sprites/Entities/Char 1/walk_6.png" id="23_iwuka"]
 [ext_resource type="Texture2D" uid="uid://b145gvhu4ameq" path="res://assets/Sprites/Entities/Char 1/walk_7.png" id="24_hyqqp"]
 [ext_resource type="Texture2D" uid="uid://b0d6xe0sreis5" path="res://assets/Sprites/Shadow.png" id="28_tffgl"]
+[ext_resource type="Texture2D" uid="uid://k1o2nroluihr" path="res://assets/Sprites/Weapons/weapon_1_pistol.png" id="30_iqsei"]
+[ext_resource type="Script" uid="uid://na08acbi7q26" path="res://scenes/player/weapon.gd" id="30_tffgl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ds1xl"]
 animations = [{
@@ -158,3 +160,15 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1001606431]
 position = Vector2(0, -264)
 shape = SubResource("CapsuleShape2D_cnsyf")
+
+[node name="Weapon" type="Node2D" parent="." unique_id=1398239236]
+position = Vector2(0, -140)
+script = ExtResource("30_tffgl")
+
+[node name="WeaponSprite" type="Sprite2D" parent="Weapon" unique_id=1082804869]
+position = Vector2(416, 0)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("30_iqsei")
+
+[node name="FirePos" type="Marker2D" parent="Weapon" unique_id=1548070491]
+position = Vector2(685, -65)
