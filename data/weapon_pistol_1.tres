@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cjdtrduk2604b"]
 
+[ext_resource type="PackedScene" uid="uid://60p6m0sf4sgj" path="res://scenes/bullet/single_bullet.tscn" id="1_5sb2r"]
 [ext_resource type="Script" uid="uid://1arg8y5kkdmx" path="res://data/weapon_data.gd" id="1_gnkpc"]
 [ext_resource type="Texture2D" uid="uid://k1o2nroluihr" path="res://assets/Sprites/Weapons/weapon_1_pistol.png" id="2_7tnj7"]
 
@@ -10,4 +11,5 @@ weapon_color = Color(0, 0.69803923, 0.6627451, 1)
 damage = 0.5
 delay_btw_shots = 0.3
 shot_position = Vector2(685, 65)
+bullet_scene = ExtResource("1_5sb2r")
 metadata/_custom_type_script = "uid://1arg8y5kkdmx"

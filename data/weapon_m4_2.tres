@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ep4mxvuwipt2"]
 
 [ext_resource type="Script" uid="uid://1arg8y5kkdmx" path="res://data/weapon_data.gd" id="1_c6hbj"]
+[ext_resource type="PackedScene" uid="uid://60p6m0sf4sgj" path="res://scenes/bullet/single_bullet.tscn" id="1_qg7e0"]
 [ext_resource type="Texture2D" uid="uid://qlmyauce5r36" path="res://assets/Sprites/Weapons/weapon_2_m4.png" id="2_v17ae"]
 
 [resource]
@@ -11,4 +12,5 @@ buy_price = 30
 damage = 1.5
 delay_btw_shots = 0.15
 shot_position = Vector2(700, 20)
+bullet_scene = ExtResource("1_qg7e0")
 metadata/_custom_type_script = "uid://1arg8y5kkdmx"

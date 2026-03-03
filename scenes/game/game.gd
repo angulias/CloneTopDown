@@ -7,6 +7,7 @@ class_name Game
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	GameManager.player = player
 
 func _physics_process(delta: float) -> void:
 	camera.global_position = player.global_position

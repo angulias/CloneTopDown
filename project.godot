@@ -15,6 +15,10 @@ run/main_scene="uid://8y2auetksx65"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://d2w27wtnekox1"
+
 [display]
 
 window/size/viewport_width=1920
@@ -63,6 +67,7 @@ interact={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="World"
+2d_physics/layer_3="Enemy"
 
 [physics]
 

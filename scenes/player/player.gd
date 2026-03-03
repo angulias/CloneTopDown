@@ -6,15 +6,8 @@ class_name Player
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var weapon: Weapon = $Weapon
 
-const WEAPON_PISTOL_1 = preload("uid://cjdtrduk2604b")
-const WEAPON_M_4_1 = preload("uid://cqmydknym7b68")
-const WEAPON_SHOTGUN_1 = preload("uid://xbvbvhto85ax")
-
 var can_move := true
 var mouse_position: Vector2
-
-func _ready() -> void:
-	weapon.set_up(WEAPON_PISTOL_1)
 
 func _process(delta: float) -> void:
 	if not can_move:
@@ -33,7 +26,10 @@ func _physics_process(delta: float) -> void:
 	var movement := direction * move_speed
 	velocity = movement
 	move_and_slide()
-	
+
+func setup_weapon(weapon_data: WeaponData) -> void:
+	weapon.set_up(weapon_data)
+	weapon.show()
 
 func get_mouse_position() -> void:
 	mouse_position = get_global_mouse_position()

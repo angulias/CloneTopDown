@@ -142,7 +142,7 @@ height = 536.0
 
 [node name="Player" type="CharacterBody2D" unique_id=740633450]
 scale = Vector2(0.25, 0.25)
-collision_mask = 0
+collision_mask = 6
 script = ExtResource("1_uniwh")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1624771196]
@@ -162,6 +162,7 @@ position = Vector2(0, -264)
 shape = SubResource("CapsuleShape2D_cnsyf")
 
 [node name="Weapon" type="Node2D" parent="." unique_id=1398239236]
+visible = false
 position = Vector2(0, -140)
 script = ExtResource("30_tffgl")
 
