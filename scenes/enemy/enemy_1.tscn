@@ -96,7 +96,6 @@ height = 142.0
 
 [node name="Shadow" parent="." index="0" unique_id=1554527159]
 modulate = Color(1, 1, 1, 0.45882353)
-position = Vector2(0, 5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("20_tdbum")
 
