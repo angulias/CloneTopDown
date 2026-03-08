@@ -16,8 +16,13 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	GameManager.play_explosion_anim(global_position)
-	await get_tree().create_timer(0.08).timeout
 	explosion_sound.play()
+	
+	if body is Enemy:
+		var enemy := body as Enemy
+		enemy.health_component.take_damage(damage)
+	
+	await get_tree().create_timer(0.08).timeout
 	queue_free()
 
 

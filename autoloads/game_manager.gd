@@ -1,5 +1,7 @@
 extends Node
 
+signal on_enemy_died
+
 var player: Player
 
 const EXPLOSION_ANIM = preload("uid://bcvenaoggvsup")
