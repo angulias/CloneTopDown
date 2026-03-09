@@ -20,7 +20,7 @@ func create_coin(pos: Vector2) -> void:
 	if random_value <= 70:
 		var coin := COIN.instantiate()
 		coin.global_position = pos
-		add_child(coin)
+		get_parent().add_child(coin)
 
 func play_dmage_text(pos: Vector2, dmg: int) -> void:
 	var damage = DMG_TEXT.instantiate() as DmgText
