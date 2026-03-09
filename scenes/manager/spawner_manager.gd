@@ -1,6 +1,8 @@
 extends Node
 class_name SpawnerManager
 
+signal on_wave_completed
+
 const SPAWN_ANIM = preload("uid://b2klf44s1kcgj")
 
 enum SpawnType{
@@ -18,11 +20,12 @@ enum SpawnType{
 
 @onready var timer: Timer = $Timer
 
-var enemies_remaining: int
+var enemies_remaining := 0
 var spawned_enemies: int
 
 func _ready() -> void:
-	start_enemy_timer()
+	GameManager.on_enemy_died.connect(_on_enemy_died)
+	enemies_remaining = enemies_per_wave
 
 func spawn_enemy() -> void:
 	var spawn_anim: SpawnAnim = SPAWN_ANIM.instantiate()
@@ -55,6 +58,14 @@ func get_new_timer() -> float:
 		time = fixed_timer
 	return time
 
+
+func _on_enemy_died() -> void:
+	enemies_remaining -= 1
+	if enemies_remaining <= 0:
+		timer.stop()
+		on_wave_completed.emit()
+		enemies_remaining = enemies_per_wave
+		spawned_enemies = 0
 
 func _on_timer_timeout() -> void:
 	if spawned_enemies >= enemies_per_wave:

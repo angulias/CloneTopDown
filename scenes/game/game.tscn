@@ -14,9 +14,19 @@
 [ext_resource type="Resource" uid="uid://dwwm5jtuqmnev" path="res://data/weapon_shotgun_2.tres" id="12_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://82drakcbsd3p" path="res://scenes/extra/rock.tscn" id="12_vaxfo"]
 [ext_resource type="PackedScene" uid="uid://b0wvij10814nb" path="res://scenes/manager/spawner_manager.tscn" id="13_ftsea"]
+[ext_resource type="FontFile" uid="uid://c4x0jidjvbcs3" path="res://assets/Fonts/kenpixel_mini_square.ttf" id="15_otnwt"]
+[ext_resource type="Texture2D" uid="uid://d0ioacy2yuqsg" path="res://assets/Sprites/tile_coin.png" id="16_3xj4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kelw5"]
 size = Vector2(6144, 40)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xj4h"]
+font = ExtResource("15_otnwt")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_5v6r0"]
+font = ExtResource("15_otnwt")
+font_size = 65
 
 [node name="Game" type="Node2D" unique_id=370434266]
 script = ExtResource("1_7h61r")
@@ -146,3 +156,71 @@ position = Vector2(-2085, 1679)
 stream = ExtResource("5_lfrn8")
 autoplay = true
 bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2065796324]
+
+[node name="GameUI" type="Control" parent="CanvasLayer" unique_id=563488022]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WaveLabel" type="Label" parent="CanvasLayer/GameUI" unique_id=154942717]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 273.0
+grow_horizontal = 2
+text = "NEW WAVE
+IN"
+label_settings = SubResource("LabelSettings_3xj4h")
+horizontal_alignment = 1
+
+[node name="EnemyCountLabel" type="Label" parent="CanvasLayer/GameUI" unique_id=1865979167]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 273.0
+grow_horizontal = 2
+text = "Enemy : 5"
+label_settings = SubResource("LabelSettings_3xj4h")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GameUI" unique_id=2039988480]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 102.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/HBoxContainer" unique_id=1384825339]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("16_3xj4h")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinsLabel" type="Label" parent="CanvasLayer/GameUI/HBoxContainer" unique_id=1157595678]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_5v6r0")
+
+[node name="WaveTimer" type="Timer" parent="." unique_id=783588560]
+wait_time = 7.0
+
+[connection signal="on_wave_completed" from="SpawnerManager" to="." method="_on_spawner_manager_on_wave_completed"]
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
