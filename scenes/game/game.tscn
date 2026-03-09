@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c7fyhdxc77xfv" path="res://scenes/game/game.gd" id="1_7h61r"]
 [ext_resource type="PackedScene" uid="uid://ffaofahjikfw" path="res://scenes/player/player.tscn" id="1_sul5r"]
-[ext_resource type="Texture2D" uid="uid://bjofmnuloll5w" path="res://assets/Sprites/Extras/crosshair.png" id="3_0sr1o"]
-[ext_resource type="Texture2D" uid="uid://dtjeuaypbsan3" path="res://assets/Sprites/Environment/ground2_white.png" id="4_kelw5"]
-[ext_resource type="AudioStream" uid="uid://blsmkqswqs85h" path="res://assets/Sound/music.mp3" id="5_lfrn8"]
+[ext_resource type="Texture2D" uid="uid://drpmj5jkfv8o7" path="res://assets/Sprites/Extras/crosshair.png" id="3_0sr1o"]
+[ext_resource type="Texture2D" uid="uid://ubm1eqcoxtwx" path="res://assets/Sprites/Environment/ground2_white.png" id="4_kelw5"]
+[ext_resource type="AudioStream" uid="uid://c3h5mideq18id" path="res://assets/Sound/music.mp3" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://bbyr21s2glqv8" path="res://scenes/extra/weapon_pickup.tscn" id="6_5i0tg"]
 [ext_resource type="Resource" uid="uid://cjdtrduk2604b" path="res://data/weapon_pistol_1.tres" id="7_5jirj"]
 [ext_resource type="Resource" uid="uid://do8b8606d0iiw" path="res://data/weapon_pistol_2.tres" id="8_vaxfo"]
@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://xbvbvhto85ax" path="res://data/weapon_shotgun_1.tres" id="11_3xj4h"]
 [ext_resource type="Resource" uid="uid://dwwm5jtuqmnev" path="res://data/weapon_shotgun_2.tres" id="12_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://82drakcbsd3p" path="res://scenes/extra/rock.tscn" id="12_vaxfo"]
-[ext_resource type="PackedScene" uid="uid://dq1m6cwoqmabf" path="res://scenes/enemy/enemy_1.tscn" id="14_ftsea"]
+[ext_resource type="PackedScene" uid="uid://b0wvij10814nb" path="res://scenes/manager/spawner_manager.tscn" id="13_ftsea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kelw5"]
 size = Vector2(6144, 40)
@@ -140,10 +140,9 @@ position = Vector2(-883, 2171)
 [node name="Rock11" parent="Rocks" unique_id=659385177 instance=ExtResource("12_vaxfo")]
 position = Vector2(-2085, 1679)
 
+[node name="SpawnerManager" parent="." unique_id=1236940948 instance=ExtResource("13_ftsea")]
+
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=893989289]
 stream = ExtResource("5_lfrn8")
 autoplay = true
 bus = &"Music"
-
-[node name="Enemy_1" parent="." unique_id=2084231172 instance=ExtResource("14_ftsea")]
-position = Vector2(-298, 577)

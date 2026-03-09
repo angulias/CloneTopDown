@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b0wvij10814nb"]
+
+[ext_resource type="Script" uid="uid://dbpjwhmxpey81" path="res://scenes/manager/spawner_manager.gd" id="1_svimk"]
+[ext_resource type="PackedScene" uid="uid://dq1m6cwoqmabf" path="res://scenes/enemy/enemy_1.tscn" id="2_w6wdg"]
+[ext_resource type="PackedScene" uid="uid://ikw6hwyjdg6o" path="res://scenes/enemy/enemy_2.tscn" id="3_83hvb"]
+[ext_resource type="PackedScene" uid="uid://cwijn8gfohw8h" path="res://scenes/enemy/enemy_3.tscn" id="4_wjose"]
+[ext_resource type="PackedScene" uid="uid://b6jy1cm2kt2rv" path="res://scenes/enemy/enemy_4.tscn" id="5_y2wwk"]
+
+[node name="SpawnerManager" type="Node" unique_id=1236940948]
+script = ExtResource("1_svimk")
+spawn_type = 1
+min_random = 1.0
+max_random = 2.5
+fixed_timer = 1.5
+enemy_list = Array[PackedScene]([ExtResource("2_w6wdg"), ExtResource("3_83hvb"), ExtResource("4_wjose"), ExtResource("5_y2wwk")])
+
+[node name="Timer" type="Timer" parent="." unique_id=967529998]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
