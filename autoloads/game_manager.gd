@@ -7,6 +7,7 @@ var coins: int = 500
 
 const EXPLOSION_ANIM = preload("uid://bcvenaoggvsup")
 const COIN = preload("uid://2qx2dr1tx5e2")
+const HIT_MATERIAL = preload("uid://ckod6k03ownon")
 
 func remove_coins(value: float) -> void:
 	coins -= value

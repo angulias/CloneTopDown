@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cwijn8gfohw8h"]
 
 [ext_resource type="PackedScene" uid="uid://cf56pt21uf0mj" path="res://scenes/enemy/base_enemy.tscn" id="1_irhgu"]
-[ext_resource type="Texture2D" uid="uid://c7les0vwf6e84" path="res://assets/Sprites/Shadow.png" id="2_us46e"]
-[ext_resource type="Texture2D" uid="uid://bi2oyhci86e05" path="res://assets/Sprites/Entities/Enemy 3/fly_0.png" id="3_44gae"]
-[ext_resource type="Texture2D" uid="uid://bn2v657j6qsrw" path="res://assets/Sprites/Entities/Enemy 3/fly_1.png" id="4_wwu2i"]
-[ext_resource type="Texture2D" uid="uid://yrdcsmt30rfv" path="res://assets/Sprites/Entities/Enemy 3/fly_2.png" id="5_y5qon"]
-[ext_resource type="Texture2D" uid="uid://dpwf0qh0itk56" path="res://assets/Sprites/Entities/Enemy 3/fly_3.png" id="6_oqadk"]
-[ext_resource type="Texture2D" uid="uid://bwobsdeivthp7" path="res://assets/Sprites/Entities/Enemy 3/fly_4.png" id="7_mibo2"]
-[ext_resource type="Texture2D" uid="uid://bn8e5wtnsvvkd" path="res://assets/Sprites/Entities/Enemy 3/fly_5.png" id="8_m2om0"]
+[ext_resource type="Texture2D" uid="uid://b0d6xe0sreis5" path="res://assets/Sprites/Shadow.png" id="2_us46e"]
+[ext_resource type="Texture2D" uid="uid://b84ywbjrox8jm" path="res://assets/Sprites/Entities/Enemy 3/fly_0.png" id="3_44gae"]
+[ext_resource type="Texture2D" uid="uid://c0wwc6ukoe6ca" path="res://assets/Sprites/Entities/Enemy 3/fly_1.png" id="4_wwu2i"]
+[ext_resource type="Texture2D" uid="uid://0854frjae20" path="res://assets/Sprites/Entities/Enemy 3/fly_2.png" id="5_y5qon"]
+[ext_resource type="Texture2D" uid="uid://dteqeyh64480n" path="res://assets/Sprites/Entities/Enemy 3/fly_3.png" id="6_oqadk"]
+[ext_resource type="Texture2D" uid="uid://bk5kyqb2g3emo" path="res://assets/Sprites/Entities/Enemy 3/fly_4.png" id="7_mibo2"]
+[ext_resource type="Texture2D" uid="uid://ckrkjtgj6ncub" path="res://assets/Sprites/Entities/Enemy 3/fly_5.png" id="8_m2om0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11x1n"]
 animations = [{
@@ -46,6 +46,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_510uq"]
 radius = 55.03635
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_44gae"]
+radius = 99.04544
+
 [node name="Enemy_3" unique_id=2084231172 instance=ExtResource("1_irhgu")]
 
 [node name="Shadow" parent="." index="0" unique_id=1554527159]
@@ -62,3 +65,7 @@ autoplay = "move"
 [node name="CollisionShape2D" parent="." index="2" unique_id=770411768]
 position = Vector2(0, -107)
 shape = SubResource("CircleShape2D_510uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D" parent_id_path=PackedInt32Array(2235889) index="0" unique_id=1850693515]
+position = Vector2(0, -110)
+shape = SubResource("CircleShape2D_44gae")

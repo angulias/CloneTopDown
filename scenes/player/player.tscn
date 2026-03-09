@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://na08acbi7q26" path="res://scenes/player/weapon.gd" id="30_tffgl"]
 [ext_resource type="Texture2D" uid="uid://b1kuiookowv35" path="res://assets/Sprites/Extras/muzzle.png" id="32_pk8ii"]
 [ext_resource type="AudioStream" uid="uid://dqndjkx5dws8j" path="res://assets/Sound/FireSound.wav" id="33_5mf0n"]
+[ext_resource type="PackedScene" uid="uid://uvlwdmgx5pf2" path="res://scenes/components/health_component.tscn" id="34_4hvnv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ds1xl"]
 animations = [{
@@ -184,7 +185,6 @@ _data = {
 scale = Vector2(0.25, 0.25)
 collision_mask = 6
 script = ExtResource("1_uniwh")
-move_speed = null
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1624771196]
 modulate = Color(1, 1, 1, 0.3137255)
@@ -230,3 +230,8 @@ autoplay = &"shoot"
 [node name="FireSound" type="AudioStreamPlayer" parent="." unique_id=305464301]
 stream = ExtResource("33_5mf0n")
 bus = &"SFX"
+
+[node name="HealthComponent" parent="." unique_id=942874551 instance=ExtResource("34_4hvnv")]
+
+[connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
+[connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]

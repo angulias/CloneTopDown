@@ -5,6 +5,7 @@ class_name Player
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var weapon: Weapon = $Weapon
+@onready var health_component: HealthComponent = $HealthComponent
 
 var can_move := true
 var mouse_position: Vector2
@@ -53,3 +54,14 @@ func update_animations() -> void:
 		anim_sprite.play("move")
 	else:
 		anim_sprite.play("idle")
+
+
+func _on_health_component_on_damaged() -> void:
+	anim_sprite.material = GameManager.HIT_MATERIAL
+	await get_tree().create_timer(0.3).timeout
+	anim_sprite.material = null
+
+
+func _on_health_component_on_defeated() -> void:
+	anim_sprite.play("death")
+	can_move = false

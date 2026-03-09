@@ -28,7 +28,9 @@ func _process(delta: float) -> void:
 
 
 func _on_health_component_on_damaged() -> void:
-	print(health_component.current_health)
+	anim_sprite.material = GameManager.HIT_MATERIAL
+	await get_tree().create_timer(0.3).timeout
+	anim_sprite.material = null
 
 
 func _on_health_component_on_defeated() -> void:
@@ -40,3 +42,7 @@ func _on_health_component_on_defeated() -> void:
 	GameManager.on_enemy_died.emit()
 	GameManager.create_coin(global_position)
 	queue_free()
+
+
+func _on_hit_area_2d_body_entered(player: Player) -> void:
+	player.health_component.take_damage(2)

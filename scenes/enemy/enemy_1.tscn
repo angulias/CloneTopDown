@@ -92,6 +92,9 @@ animations = [{
 radius = 41.0
 height = 142.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tdbum"]
+radius = 96.02083
+
 [node name="Enemy_1" unique_id=2084231172 instance=ExtResource("1_d8iib")]
 
 [node name="Shadow" parent="." index="0" unique_id=1554527159]
@@ -110,3 +113,7 @@ frame_progress = 0.6961373
 [node name="CollisionShape2D" parent="." index="2" unique_id=770411768]
 position = Vector2(0, -71)
 shape = SubResource("CapsuleShape2D_l1nwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D" parent_id_path=PackedInt32Array(2235889) index="0" unique_id=1049270521]
+position = Vector2(0, -81)
+shape = SubResource("CircleShape2D_tdbum")

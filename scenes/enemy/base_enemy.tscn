@@ -17,5 +17,9 @@ scale = Vector2(0.25, 0.25)
 
 [node name="HealthComponent" parent="." unique_id=942874551 instance=ExtResource("2_r8x88")]
 
+[node name="HitArea2D" type="Area2D" parent="." unique_id=2235889]
+collision_layer = 0
+
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
+[connection signal="body_entered" from="HitArea2D" to="." method="_on_hit_area_2d_body_entered"]
