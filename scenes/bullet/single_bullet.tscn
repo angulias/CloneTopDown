@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://60p6m0sf4sgj"]
 
-[ext_resource type="Texture2D" uid="uid://3utunsnplo3a" path="res://assets/Sprites/Extras/bullet.png" id="1_8vic8"]
+[ext_resource type="Texture2D" uid="uid://b6irhpunowl8a" path="res://assets/Sprites/Extras/bullet.png" id="1_8vic8"]
 [ext_resource type="Script" uid="uid://ciwv18hystu8k" path="res://scenes/bullet/single_bullet.gd" id="1_vq1w5"]
-[ext_resource type="Texture2D" uid="uid://c7les0vwf6e84" path="res://assets/Sprites/Shadow.png" id="3_ju4sd"]
-[ext_resource type="AudioStream" uid="uid://nb1p42gtnsfq" path="res://assets/Sound/Explosion.wav" id="4_ju4sd"]
+[ext_resource type="Texture2D" uid="uid://b0d6xe0sreis5" path="res://assets/Sprites/Shadow.png" id="3_ju4sd"]
+[ext_resource type="AudioStream" uid="uid://d2usimra7pxry" path="res://assets/Sound/Explosion.wav" id="4_ju4sd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2y8uk"]
 radius = 529.343

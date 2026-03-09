@@ -46,3 +46,4 @@ func _on_health_component_on_defeated() -> void:
 
 func _on_hit_area_2d_body_entered(player: Player) -> void:
 	player.health_component.take_damage(2)
+	GameManager.play_dmage_text(player.global_position, 2)
