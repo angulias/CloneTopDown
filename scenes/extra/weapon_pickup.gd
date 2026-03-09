@@ -19,7 +19,9 @@ func set_weapon() -> void:
 
 func _input(event: InputEvent) -> void:
 	if can_interact and event.is_action_pressed("interact"):
-		GameManager.player.setup_weapon(weapon_data)
+		if GameManager.coins >= weapon_data.buy_price:
+			GameManager.player.setup_weapon(weapon_data)
+			GameManager.remove_coins(weapon_data.buy_price)
 
 func _on_body_entered(body: Node2D) -> void:
 	buy_label.show()

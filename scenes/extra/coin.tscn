@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://2qx2dr1tx5e2"]
+
+[ext_resource type="Texture2D" uid="uid://b0d6xe0sreis5" path="res://assets/Sprites/Shadow.png" id="1_awucf"]
+[ext_resource type="Script" uid="uid://cv5ju4x2nvoal" path="res://scenes/extra/coin.gd" id="1_lecyl"]
+[ext_resource type="Texture2D" uid="uid://d0ioacy2yuqsg" path="res://assets/Sprites/tile_coin.png" id="2_0s8ks"]
+[ext_resource type="AudioStream" uid="uid://dnkvodvly3gi6" path="res://assets/Sound/BubblePop.wav" id="3_0s8ks"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lecyl"]
+radius = 21.0
+
+[sub_resource type="Animation" id="Animation_awucf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0s8ks"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lecyl"]
+_data = {
+&"RESET": SubResource("Animation_awucf"),
+&"idle": SubResource("Animation_0s8ks")
+}
+
+[node name="Coin" type="Area2D" unique_id=630223503]
+collision_layer = 0
+script = ExtResource("1_lecyl")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1391478137]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(0, 57)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_awucf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1681081337]
+texture = ExtResource("2_0s8ks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=743459450]
+shape = SubResource("CircleShape2D_lecyl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1225197083]
+libraries/ = SubResource("AnimationLibrary_lecyl")
+autoplay = &"idle"
+
+[node name="Pickup" type="AudioStreamPlayer" parent="." unique_id=1464340741]
+stream = ExtResource("3_0s8ks")
+volume_db = -10.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -38,4 +38,5 @@ func _on_health_component_on_defeated() -> void:
 	
 	await anim_sprite.animation_finished
 	GameManager.on_enemy_died.emit()
+	GameManager.create_coin(global_position)
 	queue_free()
