@@ -116,3 +116,7 @@ shape = SubResource("CapsuleShape2D_us46e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D" parent_id_path=PackedInt32Array(2235889) index="0" unique_id=1000530392]
 position = Vector2(0, -72)
 shape = SubResource("CapsuleShape2D_acsjg")
+
+[node name="HealthBar" parent="." index="5" unique_id=1657370395]
+offset_top = -207.0
+offset_bottom = -207.0

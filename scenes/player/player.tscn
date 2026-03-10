@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://b1kuiookowv35" path="res://assets/Sprites/Extras/muzzle.png" id="32_pk8ii"]
 [ext_resource type="AudioStream" uid="uid://dqndjkx5dws8j" path="res://assets/Sound/FireSound.wav" id="33_5mf0n"]
 [ext_resource type="PackedScene" uid="uid://uvlwdmgx5pf2" path="res://scenes/components/health_component.tscn" id="34_4hvnv"]
+[ext_resource type="PackedScene" uid="uid://1ebu7cpeos1b" path="res://scenes/extra/health_bar.tscn" id="35_bbmj2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ds1xl"]
 animations = [{
@@ -232,6 +233,13 @@ stream = ExtResource("33_5mf0n")
 bus = &"SFX"
 
 [node name="HealthComponent" parent="." unique_id=942874551 instance=ExtResource("34_4hvnv")]
+
+[node name="HealthBar" parent="." unique_id=1657370395 instance=ExtResource("35_bbmj2")]
+offset_left = -220.0
+offset_top = -832.0
+offset_right = -220.0
+offset_bottom = -832.0
+scale = Vector2(3, 3)
 
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="on_defeated" from="HealthComponent" to="." method="_on_health_component_on_defeated"]
