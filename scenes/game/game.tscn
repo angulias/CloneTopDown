@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b0wvij10814nb" path="res://scenes/manager/spawner_manager.tscn" id="13_ftsea"]
 [ext_resource type="FontFile" uid="uid://c4x0jidjvbcs3" path="res://assets/Fonts/kenpixel_mini_square.ttf" id="15_otnwt"]
 [ext_resource type="Texture2D" uid="uid://d0ioacy2yuqsg" path="res://assets/Sprites/tile_coin.png" id="16_3xj4h"]
+[ext_resource type="Shader" uid="uid://bmvwtuvg1nr0j" path="res://scenes/game/vignette.gdshader" id="18_uyinl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kelw5"]
 size = Vector2(6144, 40)
@@ -28,6 +29,11 @@ font_size = 100
 [sub_resource type="LabelSettings" id="LabelSettings_5v6r0"]
 font = ExtResource("15_otnwt")
 font_size = 65
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10c2w"]
+shader = ExtResource("18_uyinl")
+shader_parameter/outerRadius = 1.70000008075
+shader_parameter/MainAlpha = 0.800000038
 
 [node name="Game" type="Node2D" unique_id=370434266]
 script = ExtResource("1_7h61r")
@@ -221,6 +227,14 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "100"
 label_settings = SubResource("LabelSettings_5v6r0")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=347362859]
+material = SubResource("ShaderMaterial_10c2w")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="WaveTimer" type="Timer" parent="." unique_id=783588560]
 wait_time = 7.0
