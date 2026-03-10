@@ -1,6 +1,7 @@
 extends Node
 
 signal on_enemy_died
+signal on_camera_shake
 
 var player: Player
 var coins: int = 500

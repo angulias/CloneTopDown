@@ -25,6 +25,7 @@ func shoot_weapon() -> void:
 	bullet_instance.move_direction = (get_global_mouse_position() - global_position).normalized()
 	animation_player.play("shoot")
 	fire_sound.play()
+	GameManager.on_camera_shake.emit()
 	get_tree().root.add_child(bullet_instance)
 
 func set_up(weapon_data: WeaponData) -> void:
